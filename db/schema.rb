@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141119131312) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "data_sources", force: true do |t|
     t.string   "name"
     t.string   "parser_name"
@@ -33,7 +30,7 @@ ActiveRecord::Schema.define(version: 20141119131312) do
     t.datetime "updated_at"
   end
 
-  add_index "posts", ["data_source_id"], name: "index_posts_on_data_source_id", using: :btree
-  add_index "posts", ["title", "posted_at"], name: "index_posts_on_title_and_posted_at", using: :btree
+  add_index "posts", ["data_source_id"], name: "index_posts_on_data_source_id"
+  add_index "posts", ["title", "posted_at"], name: "index_posts_on_title_and_posted_at"
 
 end
